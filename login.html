@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="pt-br"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="pt-br"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="pt-br"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="pt-br">
+    <!--<![endif]-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="google-site-verification" content="0S5m_FtrvWMisYXGAcXdzrDhBvq7nl71KtElsTuf_5Y" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Rastreamento Veicular" />
+        <title>Login</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.ico" type="image/x-icon" />
+        <!-- Bootstrap core CSS -->
+		<!-- <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" /> -->
+        <!-- Login CSS -->
+        <!-- <link type="text/css" rel="stylesheet" href="/css/style-login.min.css?v=1.6" /> -->
+        <link type="text/css" rel="stylesheet" href="/css/fullscreen-loader.css?v=1.0" />
+        <!-- <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+        <!-- link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" / -->
+        <link type="text/css" rel="stylesheet" href="/css/jquery.cxdialog.css" />
+        <!-- Checkbox Awesome CSS -->
+        <link type="text/css" rel="stylesheet" href="/css/awesome-bootstrap-checkbox.css" />
+    </head>
+    <style>
+		* {
+			box-sizing: border-box;
+		}
+
+		@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+
+
+		body {
+			font-family: 'Rubik', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			display: flex;
+			height: 100vh;
+		}
+
+		.left {
+			overflow: hidden;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			animation-name: left;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-delay: 1s;
+		}
+
+		.right {
+			flex: 1;
+			background-color: black;
+			transition: 1s;
+			background-image: url(https://1.bp.blogspot.com/-92hAbdLPkMI/YPIyYEHGP-I/AAAAAAAAzl4/Z8EITSxukxc-TMp0NgBm0xFkW3aFuo8JwCLcBGAsYHQ/s2048/Aventador.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+
+
+		.header>h2 {
+			margin: 0;
+			color: #4f46a5;
+		}
+
+		.header>h4 {
+			margin-top: 10px;
+			font-weight: normal;
+			font-size: 15px;
+			color: rgba(0, 0, 0, .4);
+		}
+
+		.form {
+			max-width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.form>p {
+			text-align: right;
+		}
+
+		.form>p>a {
+			color: #000;
+			font-size: 14px;
+		}
+
+		.form-field {
+			height: 46px;
+			padding: 0 16px;
+			border: 2px solid #ddd;
+			border-radius: 4px;
+			font-family: 'Rubik', sans-serif;
+			outline: 0;
+			transition: .2s;
+			margin-top: 20px;
+		}
+
+		.form-field:focus {
+			border-color: #0f7ef1;
+		}
+
+		.form>button {
+			padding: 12px 10px;
+			border: 0;
+			background: linear-gradient(to right, #de48b5 0%, #0097ff 100%);
+			border-radius: 3px;
+			margin-top: 10px;
+			color: #fff;
+			letter-spacing: 1px;
+			font-family: 'Rubik', sans-serif;
+		}
+
+		.animation {
+			animation-name: move;
+			animation-duration: .4s;
+			animation-fill-mode: both;
+			animation-delay: 2s;
+		}
+
+		.a1 {
+			animation-delay: 2s;
+		}
+
+		.a2 {
+			animation-delay: 2.1s;
+		}
+
+		.a3 {
+			animation-delay: 2.2s;
+		}
+
+		.a4 {
+			animation-delay: 2.3s;
+		}
+
+		.a5 {
+			animation-delay: 2.4s;
+		}
+
+		.a6 {
+			animation-delay: 2.5s;
+		}
+
+		@keyframes move {
+			0% {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-40px);
+			}
+
+			100% {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes left {
+			0% {
+				opacity: 0;
+				width: 0;
+			}
+
+			100% {
+				opacity: 1;
+				padding: 20px 40px;
+				width: 440px;
+			}
+
+
+
+
+            
+		}
+	</style>
+</head>
+
+<body>
+	<div id="loading-wrapper">
+		<div id="loading-text">Aguarde</div>
+		<div id="loading-content"></div>
+	</div>
+
+	<div class="container">
+		<div class="left">
+			<div class="header">
+				<h2 class="animation a1">Login</h2>
+				<h4 class="animation a2">Log in to your account using email and password</h4>
+			</div>
+			<section id="login-containerId" class="login-container">
+                <div id="output"></div>
+			<div class="form">
+				<input type="email" class="form-field animation a3" placeholder="Email Address">
+				<input type="password" class="form-field animation a4" placeholder="Password">
+				<p class="animation a5"><a href="#">Forgot Password</a></p>
+				<button class="animation a6">LOGIN</button>
+			</div>
+			</section>
+		</div>
+		<div class="right"></div>
+	</div>
+
+</body>
+    <!-- <body>
+        <div id="loading-wrapper">
+            <div id="loading-text">Aguarde</div>
+            <div id="loading-content"></div>
+        </div>
+        <div id="header">
+            <span class="btn btn-login-header">
+                <a title="Recarregar a página" href="javascript:location.reload();">
+                    <img id="logo-id" class="btn-login-header-image" alt="" src="">
+                </a>
+            </span>
+        </div>
+        <div id="body">
+            <section id="login-containerId" class="login-container">
+                <div id="output"></div>
+                <div id="loginId" class="login">
+                    <h1>Login</h1>
+                    <div class="login-plataforma" data-toggle="tooltip" data-placement="top" data-html="true" title="Clique 3x<br/>para limpar<br/>os dados">
+                        <a href="javascript:limparCache();">
+                            <img id="plataforma-id" height="28">
+                        </a>
+                    </div>
+                    <div class="login-container-troca-senha"><a href="#" class="forgot-pass">Esqueci a senha</a></div>
+                    <form class="form-horizontal" role="form" action="?" id="ajax_form" method="post">
+                        <div id="recaptcha"
+                             class="g-recaptcha"
+                             data-sitekey="6LfXCWkUAAAAAMaJ-GBExQzgZsH7J-rrA8dgiT6X"
+                             data-size="invisible"
+                             data-callback="onSubmit">
+                        </div>
+                        <div class="input-group input-login">
+                            <label for="auth_user" class="input-group-addon group-input" title="CPF/CNPJ" style="padding-right: 12px;">
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                            </label>
+                            <input type="text" class="form-control input-text" id="auth_user" name="auth_user" onfocus="javascript:removeMessage();" placeholder="Usuário" style="height: 40px;">
+                        </div>
+                        <div class="input-group input-login" style="width: 100%;">
+                            <label for="auth_pw" class="input-group-addon group-input" title="Senha" style="padding-right: 10px;">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </label>
+                            <input type="password" name="auth_pw" id="auth_pw" class="form-control input-text" onfocus="javascript:removeMessage();" maxlength="50"  placeholder="Senha" data-toggle="password" style="border-radius: 0; border-right: none; height: 40px;">
+                        </div>
+                        <div class="checkbox checkbox-primary login-container-lembrar" style="display: inline;">
+                            <input type="checkbox" id="lembrarDeMimId" class="styled">
+                            <label for="lembrarDeMimId"><b>Lembrar</b></label>
+                        </div>
+                        <div style="display: inline; position: relative; right: -35px;">
+                            <button type="button" id="entrarId" class="btn btn-primary btn-lg" style="width: 150px;">Entrar</button>
+                        </div>
+                        <p style="color: #fff; font-size: 11px; font-weight: normal; text-align: justify; line-height: 1.6;">
+                            Este site é protegido pelo reCAPTCHA e aplica a 
+                            <a target="_self" href="https://policies.google.com/privacy" style="text-decoration: underline; font-weight: bold;">Política de Privacidade</a> e 
+                            <a target="_self" href="https://policies.google.com/terms" style="text-decoration: underline; font-weight: bold;">Termos de Serviços</a> do Google, além de nossa própria 
+                            <a target="_self" href="https://rdv.nyc3.digitaloceanspaces.com/tracker/downloads/files/privacy/privacy.pdf" style="text-decoration: underline; font-weight: bold;">Política de Privacidade</a> em acordo com a 
+                            <a target="_self" href="https://pt.wikipedia.org/wiki/Lei_Geral_de_Prote%C3%A7%C3%A3o_de_Dados_Pessoais" style="text-decoration: underline; font-weight: bold;">Lei Geral de Proteção de Dados</a>.
+                        </p>
+                        <input type="hidden" id="share-code" class="form-control">
+                        <input type="hidden" id="get_ip" class="form-control">
+                    </form>
+                </div>
+                <div id="trocaSenhaId" class="login-container login hide">
+                    <div class="pass-reset">
+                        <button id="closeId">X</button>
+                        <label>Informe o CPF/CNPJ ou login</label>
+                        <input class="form-control" type="text" id="cpf" name="cpf" />
+                        <div id="recaptcha-recuperar-senha" style="margin-top: 10px;"
+                             class="g-recaptcha"
+                             data-sitekey="6LfXCWkUAAAAAMaJ-GBExQzgZsH7J-rrA8dgiT6X"
+                             data-callback="enviarEmail">
+                        </div>
+                    </div>
+                </div>
+                <div id="trocaSenhaUser" class="login-container login hide">
+                    <h1>Troca de senha</h1>
+                    <div class="pass-reset-user">
+                        <form class="form-horizontal" role="form" id="troca_senha_form" method="post" >
+                            <input type="hidden" name="troca_senha_user" id="troca_senha_user">
+                            <div class="input-group input-login" style="width: 100%;">
+                                <label for="senha_atual" class="input-group-addon group-input" title="Senha" style="padding-right: 10px;">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </label>
+                                <input type="password" name="senha_atual" id="senha_atual" class="form-control input-text" maxlength="50" placeholder="Senha atual">
+                            </div>
+                            <div class="input-group input-login" style="width: 100%;">
+                                <label for="nova_senha" class="input-group-addon group-input" title="Senha" style="padding-right: 10px;">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </label>
+                                <input type="password" name="nova_senha" id="nova_senha" class="form-control input-text" maxlength="50" placeholder="Senha nova" >
+                            </div>
+                            <div class="input-group input-login" style="width: 100%;">
+                                <label for="repita_senha" class="input-group-addon group-input" title="Confirma Senha" style="padding-right: 10px;">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </label>
+                                <input type="password" name="repita_senha" id="repita_senha" class="form-control input-text" maxlength="50" placeholder="Confirma senha">
+                            </div>
+        
+                            <div style="display: inline; position: relative;  left: 130px;">
+                                <button type="button" id="btn_troca_senha_user" class="btn btn-primary btn-lg" style="width: 150px;">Atualizar senha</button>
+                            </div>        
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <div class="modal fade" id="acesso-obsoleto">
+                <div class="modal-dialog modal-lg" role="dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"><span class="fa fa-warning"></span> Oops! Acesso obsoleto</div>
+                        <div class="modal-body text-center">
+                                <h4>Para acessar <code>Equipamentos Disponíveis</code> entre com seu usuário principal. </h4>
+                            <img src="assets/img/acesso-unico.png" style="width: 65%; margin:0 auto;">
+                            
+                            <h5 class="text-left">Para melhorar sua experiência na plataforma, criamos um <strong>usuário unificado</strong> no qual você poderá fazer toda a gestão de sua frota e configuração de equipamentos. <br> Entre com seu usuário comum e clique em <code><span class="fa fa-plug"></span> Equipamentos disponíveis</code> no menu. </h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Entendi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span id="version"></span>
+    </body> -->
+	<!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.1.2/bootstrap-show-password.min.js"></script>
+	<!-- Recaptcha -->
+	<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=pt-BR"></script>
+	<!-- Dialog -->
+	<script type="text/javascript" src="/js/jquery.cxdialog.js"></script>
+	<!-- Login -->
+	<script type="text/javascript" src="/js/valida_cpf_cnpj.js"></script>
+	<!-- <script type="text/javascript" src="/js/login.min.js?v=16.8"></script> -->
+	<script type="text/javascript" src="/js/login_v.1.0.js"></script>
+    <!-- Cookie Consent -->
+	<!-- script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+	<!-- script>
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+					"background": "#000"
+				},
+				"button": {
+					"background": "#f1d600"
+				}
+			},
+			"theme": "classic",
+			"position": "bottom",
+			"content": {
+				"message": "Utilizamos cookies essenciais e tecnologias semelhantes de acordo com a nossa Política de Privacidade e, ao continuar navegando, você concorda com estas condições.",
+				"dismiss": "OK",
+				"link": "Saiba mais",
+				"href": "https://pt.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)"
+			}
+		});
+	</script -->
+
+	<style>
+		#recaptcha-recuperar-senha {
+			transform:scale(0.86);
+			transform-origin:0 0;
+		}
+		.tooltip.top .tooltip-arrow {
+			border-top-color: #333;
+		}
+		.tooltip-inner {
+			background-color: #333;
+		}
+		#ajax_form > div:nth-child(3) > div > span {
+			color: white;
+			background-color: rgba(0,0,0,.1);
+		}
+	</style>
+</html>
