@@ -24,7 +24,7 @@
 	<!-- Login CSS -->
 	<!-- <link type="text/css" rel="stylesheet" href="/css/style-login.min.css?v=1.6" /> -->
 	<link type="text/css" rel="stylesheet" href="/css/fullscreen-loader.css?v=1.0" />
-	<!-- <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 	<link type="text/css" rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 	<link type="text/css" rel="stylesheet" href="/css/jquery.cxdialog.css" />
@@ -53,9 +53,7 @@
 	.left {
 		overflow: hidden;
 		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		justify-content: center;
+    	flex-direction: column;
 		animation-name: left;
 		animation-duration: 1s;
 		animation-fill-mode: both;
@@ -180,7 +178,6 @@
 
 		100% {
 			opacity: 1;
-			padding: 20px 40px;
 			width: 440px;
 		}
 	}
@@ -188,12 +185,42 @@
 	.login-container-lembrar {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 20px;
 	}
 
 	.login-plataforma {
 		display: flex;
 		align-items: center;
 		gap: 10px;
+	}
+
+	.fa-user-o{
+		position: relative; 
+		top: 50px; 
+		left: 15px; 
+		z-index: 1;
+	}
+
+	.card_login {
+		padding: 20px 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 1;
+	}
+
+	.bar_color_origem{
+		height: 100px;
+		background-color: #333;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#logo-id{
+		margin-top: 5px;
+		max-height: 40px;
+		max-width: 300px;
 	}
 </style>
 </head>
@@ -205,36 +232,55 @@
 	</div>
 
 	<div class="container_form">
+		<div></div>
 		<div class="left">
-			<div class="header">
-
-				<div class="login-plataforma animation a2" data-toggle="tooltip" data-placement="top" data-html="true"
-					title="Clique 3x<br/>para limpar<br/>os dados">
-					<a href="javascript:limparCache();">
-						<img id="plataforma-id" height="28">
-					</a>
-					<h1 class="animation a1" style="margin-top: 5px;">Login</h1>
-				</div>
-				<h4 class="animation a2">Log in to your account using email and password</h4>
+			<div class="bar_color_origem">
+				<img id="logo-id" class="btn-login-header-image" alt="" src="https://rdv.nyc3.cdn.digitaloceanspaces.com/tracker/assets/images/empresas/logos/rdv_login.png">
 			</div>
-			<section id="login-containerId" class="login-container">
-				<div id="output"></div>
-				<div class="form">
-					<input type="email" class="form-field animation a3" placeholder="Email Address">
-					<input type="password" class="form-field animation a4" placeholder="Password">
+			<div class="card_login">
+				<div>
+					<div class="header">
+						<div class="login-plataforma animation a2" data-toggle="tooltip" data-placement="top" data-html="true"
+							title="Clique 3x<br/>para limpar<br/>os dados">
+							<a href="javascript:limparCache();">
+								<img id="plataforma-id" height="28">
+							</a>
+							<h1 class="animation a1" style="margin-top: 5px;">Login</h1>
+						</div>
+					</div>
+					<section id="login-containerId" class="login-container">
+						<div id="output"></div>
+						<form class="form-horizontal form" role="form" action="?" id="ajax_form" method="post">
+							<div id="recaptcha"
+									class="g-recaptcha"
+									data-sitekey="6LfXCWkUAAAAAMaJ-GBExQzgZsH7J-rrA8dgiT6X"
+									data-size="invisible"
+									data-callback="onSubmit">
+							</div>
+	
+							
+							<i class="fa fa-user-o animation a3" aria-hidden="true"></i>
+							<input type="email" class="form-field animation a3" id="auth_user" name="auth_user" onfocus="javascript:removeMessage();" placeholder="Usuário">
+							
+							<input type="password" class="form-field animation a4" placeholder="Senha" name="auth_pw" id="auth_pw" onfocus="javascript:removeMessage();">
+	
+							<p class="animation a5 login-container-lembrar">
+								<span>
+									<input type="checkbox" id="lembrarDeMimId">
+									<label for="lembrarDeMimId"><b>Lembrar</b></label>
+								</span>
+								<a href="#">Esqueci a senha</a>
+	
+							</p>
 
-					<p class="animation a5 login-container-lembrar mt-2">
-						<span>
-							<input type="checkbox" id="lembrarDeMimId">
-							<label for="lembrarDeMimId"><b>Lembrar</b></label>
-						</span>
-						<a href="#">Esqueci a senha</a>
-
-					</p>
-					<button class="animation a6">LOGIN</button>
+							<button class="btn draw-border animation a6" id="entrarId">LOGIN</button>
+						</form>
+	
+						<input type="hidden" id="share-code" class="form-control">
+						<input type="hidden" id="get_ip" class="form-control">
+					</section>
 				</div>
-
-			</section>
+			</div>
 		</div>
 		<div class="right"></div>
 	</div>
@@ -402,50 +448,4 @@
 		}
 	});
 </script>
-<<<<<<< HEAD
-
-<style>
-	#recaptcha-recuperar-senha {
-		transform: scale(0.86);
-		transform-origin: 0 0;
-	}
-
-	.tooltip.top .tooltip-arrow {
-		border-top-color: #333;
-	}
-
-	.tooltip-inner {
-		background-color: #333;
-	}
-
-	#ajax_form>div:nth-child(3)>div>span {
-		color: white;
-		background-color: rgba(0, 0, 0, .1);
-	}
-</style>
-
 </html>
-=======
-
-<style>
-	#recaptcha-recuperar-senha {
-		transform: scale(0.86);
-		transform-origin: 0 0;
-	}
-
-	.tooltip.top .tooltip-arrow {
-		border-top-color: #333;
-	}
-
-	.tooltip-inner {
-		background-color: #333;
-	}
-
-	#ajax_form>div:nth-child(3)>div>span {
-		color: white;
-		background-color: rgba(0, 0, 0, .1);
-	}
-</style>
-
-</html>
->>>>>>> f972a4c873cf5cfbcbe23e7676a973871090274b
