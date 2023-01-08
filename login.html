@@ -168,7 +168,7 @@
 		animation-delay: 2.5s;
 	}
 	.a6 {
-		animation-delay: 2.6s;
+		animation-delay: 2.8s;
 	}
 
 	@keyframes move {
@@ -222,15 +222,15 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex: 1;
+		flex: 3;
 		
 	}
 
 	.bar_color_origem{
-		height: 100px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex: 1;
 	}
 
 	#logo-id{
@@ -250,6 +250,11 @@
     	border-radius: 10px;
 		box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 		background-color: #fff;
+		margin-bottom: 150px;
+	}
+
+	#logo-id {
+		width: 300px;
 	}
 	
 
@@ -283,7 +288,13 @@
 		#logo-id{
 			display: none;
 		}
+
+		.container_input_login{
+			flex: none;
+		}
 	}
+
+	
 </style>
 </head>
 
@@ -298,19 +309,19 @@
 		<div class="left">
 			<div class="bar_color_origem">
 				<img id="logo-id" class="btn-login-header-image" alt="" >
+				<div class="container_logo_mobile animation_fade a6">
+					<img id="logo-mobile" style="max-width: 40%; max-height: 40%; margin-top: 15px;">
+				</div>
 			</div>
 			<div class="card_login">
-				<div class="container_logo_mobile animation_fade a6">
-					<img id="logo-mobile" style="max-width: 60%; max-height: 60%;">
-				</div>
-				<div class="container_input_login a5">
+				<div class="gradient-border container_input_login a5" id="box">
 					<div class="header">
 						<div class="login-plataforma animation a2" data-toggle="tooltip" data-placement="top" data-html="true"
 							title="Clique 3x<br/>para limpar<br/>os dados">
 							<a href="javascript:limparCache();">
 								<img id="plataforma-id" height="28">
 							</a>
-							<h1 class="animation a1" style="margin-top: 5px;">Login</h1>
+							<h1 class="animation a1" style="margin-top: 10px; font-size: 2rem;">Login</h1>
 						</div>
 					</div>
 					<section id="login-containerId" class="login-container">
@@ -323,7 +334,6 @@
 									data-callback="onSubmit">
 							</div>
 	
-							
 							<i class="fa fa-user-o animation a3" aria-hidden="true"></i>
 							<input type="email" class="form-field animation a3" id="auth_user" name="auth_user" onfocus="javascript:removeMessage();" placeholder="Usuário">
 							
