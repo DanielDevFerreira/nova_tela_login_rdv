@@ -132,6 +132,18 @@
 		animation-delay: 2s;
 	}
 
+	.animation_fade {
+		animation: fadeIn 5s;
+		animation-duration: .4s;
+		animation-fill-mode: both;
+		animation-delay: 2.6s;
+	}
+
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; visibility: visible;}
+	}
+
 	.a1 {
 		animation-delay: 2s;
 	}
@@ -154,6 +166,9 @@
 
 	.a6 {
 		animation-delay: 2.5s;
+	}
+	.a6 {
+		animation-delay: 2.6s;
 	}
 
 	@keyframes move {
@@ -206,6 +221,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		flex: 1;
 	}
 
@@ -221,6 +237,43 @@
 		margin-top: 5px;
 		max-height: 40px;
 		max-width: 300px;
+	}
+
+	.container_logo_mobile {
+		display: none;
+	}
+
+
+	.container_input_login{
+		width: 100%;
+	}
+	
+
+	@media only screen and (max-width: 600px) {
+		.right{
+			display: none;
+		}
+
+		.container_input_login{
+			flex: 2;
+			width: 100%;
+		}
+
+		.container_logo_mobile {
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.5s;
+            cursor: pointer;
+		}
+
+        .container_logo_mobile:hover{
+            -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+            filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
 	}
 </style>
 </head>
@@ -238,7 +291,10 @@
 				<img id="logo-id" class="btn-login-header-image" alt="" src="https://rdv.nyc3.cdn.digitaloceanspaces.com/tracker/assets/images/empresas/logos/rdv_login.png">
 			</div>
 			<div class="card_login">
-				<div>
+				<div class="container_logo_mobile animation_fade a6">
+					<img src="https://rdv.nyc3.digitaloceanspaces.com/tests/tracker/assets/images/empresas/logos/pratic.png" style="max-width: 60%; max-height: 60%;">
+				</div>
+				<div class="container_input_login">
 					<div class="header">
 						<div class="login-plataforma animation a2" data-toggle="tooltip" data-placement="top" data-html="true"
 							title="Clique 3x<br/>para limpar<br/>os dados">
