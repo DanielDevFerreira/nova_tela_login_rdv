@@ -228,7 +228,6 @@
 
 	.bar_color_origem{
 		height: 100px;
-		background-color: #333;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -250,6 +249,7 @@
 		padding: 15px;
     	border-radius: 10px;
 		box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
+		background-color: #fff;
 	}
 	
 
@@ -261,6 +261,7 @@
 		.container_input_login{
 			flex: 2;
 			width: 100%;
+			background-color: #fff;
 		}
 
 		.container_logo_mobile {
@@ -278,6 +279,10 @@
             -webkit-transform: scale(1.1);
             transform: scale(1.1);
         }
+
+		#logo-id{
+			display: none;
+		}
 	}
 </style>
 </head>
@@ -292,11 +297,11 @@
 		<div></div>
 		<div class="left">
 			<div class="bar_color_origem">
-				<img id="logo-id" class="btn-login-header-image" alt="" src="https://rdv.nyc3.cdn.digitaloceanspaces.com/tracker/assets/images/empresas/logos/rdv_login.png">
+				<img id="logo-id" class="btn-login-header-image" alt="" >
 			</div>
 			<div class="card_login">
 				<div class="container_logo_mobile animation_fade a6">
-					<img src="https://rdv.nyc3.digitaloceanspaces.com/tests/tracker/assets/images/empresas/logos/pratic.png" style="max-width: 60%; max-height: 60%;">
+					<img id="logo-mobile" style="max-width: 60%; max-height: 60%;">
 				</div>
 				<div class="container_input_login a5">
 					<div class="header">
